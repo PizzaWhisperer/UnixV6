@@ -1,0 +1,33 @@
+mkfs ourcode.uv6 5120 6144
+mount ourcode.uv6
+add README.md /README.md
+mkdir /src
+add bmblock.c /src/bmblock.c
+add bmblock.h /src/bmblock.h
+add direntv6.c /src/direntv6.c
+add direntv6.h /src/direntv6.h
+add error.c /src/error.c
+add error.h /src/error.h
+add filev6.c /src/filev6.c
+add filev6.h /src/filev6.h
+add fs.c /src/fs.c
+add inode.c /src/inode.c
+add inode.h /src/inode.h
+add Makefile /src/Makefile
+add mount.c /src/mount.c
+add mount.h /src/mount.h
+add sector.c /src/sector.c
+add sector.h /src/sector.h
+add sha.c /src/sha.c
+add sha.h /src/sha.h
+add shell.c /src/shell.c
+add test-bitmap.c /src/test-bitmap.c
+add test-bmmount.c /src/test-bmmount.c
+add test-core.c /src/test-core.c
+add test-create.c /src/test-create.c
+add test-dirent.c /src/test-dirent.c
+add test-file.c /src/test-file.c
+add test-inodes.c /src/test-inodes.c
+add unixv6fs.h /src/unixv6fs.h
+quit
+

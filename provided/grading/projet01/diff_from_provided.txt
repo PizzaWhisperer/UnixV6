@@ -1,0 +1,173 @@
+bmblock.h:
+7d6
+<  * @author Edouard Bugnion
+11d9
+< #include <stddef.h> // for size_t
+26c24
+<  * between min and max (included, thus (max-min+1) elements).
+---
+>  * between min and may (included, thus (max-min+1) elements).
+
+
+unixv6fs.h:
+8c8
+<  * This file is a revision from Edouard Bugnion of a file created by
+---
+>  * This file is an revision from Edouard Bugnion of a file created by
+19d18
+<  * @author original UNIX v6 team + Mendel Rosenblum (Stanford) + Edouard Bugnion
+35c34
+<  * inodes                | s_inode_start  | s_inode_start+s_isize-1
+---
+>  * inodes                | s_inode_start  | s_inode_start_s_isize-1
+150c149
+< // Max. number of sector locations held in an inode
+---
+> // Max. number of sector locations hold in an inode
+160a160,161
+> #define DATE_SIZE 2 /* uint16_t TIME*/
+> 
+202,204c203,212
+<     /* TODO WEEK 04:
+<      * la première chose à faire est de définir cette structure.
+<      */
+---
+>     uint16_t i_mode;
+>     uint8_t i_nlink;
+>     uint8_t i_uid;
+>     uint8_t i_gid;
+>     uint8_t i_size0;
+>     uint16_t i_size1;
+>     uint16_t i_addr[ADDR_SMALL_LENGTH];
+>     uint16_t i_atime[DATE_SIZE];
+>     uint16_t i_mtime[DATE_SIZE];
+> 
+
+
+mount.h:
+7d6
+<  * @author Edouard Bugnion
+46a46,48
+> /*
+>  * staff only; students will not have to implement
+>  */
+
+
+error.h:
+7d6
+<  * @author Edouard Bugnion
+
+
+inode.h:
+7d6
+<  * @author Edouard Bugnion
+19c18
+<  * @brief Return the size of a file associated to a given inode.
+---
+>  * @brief Return the size of a given inode.
+108c107
+< int inode_write(struct unix_filesystem *u, uint16_t inr, const struct inode *inode);
+---
+> int inode_write(struct unix_filesystem *u, uint16_t inr, struct inode *inode);
+
+
+sector.h:
+7d6
+<  * @author Edouard Bugnion
+31c29
+<  * @brief write one 512-byte sector from the virtual disk
+---
+>  * @brief read one 512-byte sector from the virtual disk
+37c35
+< int sector_write(FILE *f, uint32_t sector, const void *data);
+---
+> int sector_write(FILE *f, uint32_t sector, void  *data);
+
+
+direntv6.h:
+7d6
+<  * @author Edouard Bugnion
+15a15,16
+> #define MAXPATHLEN_UV6 1024
+> 
+20,22c21,24
+< struct directory_reader {
+<     /* TODO WEEK 06:
+<      * définir cette structure.
+---
+> /**
+>  * @brief skip the '/' in the front of a string
+>  * @param str pointer to the string
+>  * @return str increased to skip the '/' in the front
+24c26,32
+<     int unused; // so that it can compile before WEEK 6
+---
+> char* trim_slash(char *str);
+> 
+> struct directory_reader {
+>     struct filev6 fv6;
+>     struct direntv6 dirs[DIRENTRIES_PER_SECTOR];
+>     uint32_t cur;
+>     uint32_t last;
+38c46
+<  * @param d the directory reader
+---
+>  * @param d the dierctory reader
+46c54
+<  * @brief debugging routine; print a subtree (note: recursive)
+---
+>  * @brief debugging routine; print the a subtree (note: recursive)
+57,58c65,66
+<  * @param inr the root of the subtree
+<  * @param entry the pathname relative to the subtree
+---
+>  * @param inr the current of the subtree
+>  * @param entry the prefix to the subtree
+
+
+filev6.h:
+7d6
+<  * @author Edouard Bugnion
+26c25
+<  * @brief open the file corresponding to a given inode; set offset to zero
+---
+>  * @brief open up a file corresponding to a given inode; set offset to zero
+28c27
+<  * @param inr the inode number (IN)
+---
+>  * @param inr he inode number (IN)
+30c29
+<  * @return 0 on success; the appropriate error code (<0) on error
+---
+>  * @return 0 on success; <0 on errror
+46,47c45
+<  * @return >0: the number of bytes of the file read; 0: end of file;
+<  *             the appropriate error code (<0) on error
+---
+>  * @return >0: the number of bytes of the file read; 0: end of file; <0 error
+54c52
+<  * @param mode the mode of the file
+---
+>  * @param mode the new offset of the file
+68,69c66
+< int filev6_writebytes(struct unix_filesystem *u, struct filev6 *fv6, const void *buf, int len);
+< 
+---
+> int filev6_writebytes(struct unix_filesystem *u, struct filev6 *fv6, void *buf, int len);
+
+
+sha.h:
+7d6
+<  * @author Aurélien Soccard
+28c27
+<  * @param inode the inode of which we want to print the content
+---
+>  * @param inode the inocde of which we want to print the content
+
+
+test-core.c:
+5d4
+<  * @author Aurélien Soccard & Jean-Cédric Chappelier
+51a51
+>         printf("mainerr");
+

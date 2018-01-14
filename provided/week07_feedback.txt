@@ -1,0 +1,235 @@
+Submission Failed
+
+preflight check script submit.sh returned error code 139
+stdout: making (our) test-inodes: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o error.o error.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-core.o test-core.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o inode.o inode.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o mount.o mount.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o sector.o sector.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-inodes test-inodes.o error.o test-core.o inode.o mount.o sector.o -ggdb
+test-inodes done.
+making (our) test-file: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-file.o test-file.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o sha.o sha.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o filev6.o filev6.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-file test-file.o error.o test-core.o inode.o mount.o sector.o sha.o filev6.o -lcrypto -ggdb
+test-file done.
+making (our) test-dirent: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o direntv6.o direntv6.c
+<builtin>: recipe for target 'direntv6.o' failed
+make failed.
+=====
+testing our test-inodes on disk simple.uv6: done.
+diff from reference:
+18a19,54
+> TESTS_BEGINNING
+> isize: 32
+> fsize: 1024
+> fbmsize: 0
+> ibmsize: 0
+> inode_start: 2
+> block_start: 34
+> fbm_start: 0
+> ibm_start: 0
+> TEST_BEGIN
+> sector_read_null_file_ptr: PASS
+> sector_read_null_data_ptr: PASS
+> successful_read: PASS
+> overseek: PASS
+> fbm_null: PASS
+> ibm_null: PASS
+> non_null_file: PASS
+> TEST_END
+> MOUNT_TEST_BEGIN
+> **********FS SUPERBLOCK START**********
+> s_isize             : 32
+> s_fsize             : 1024
+> s_fbmsize           : 0
+> s_ibmsize           : 0
+> s_inode_start       : 2
+> s_block_start       : 34
+> s_fbm_start         : 0
+> s_ibm_start         : 0
+> s_flock             : 0
+> s_ilock             : 0
+> s_fmod              : 0
+> s_ronly             : 0
+> s_time              : [0] 0
+> **********FS SUPERBLOCK END**********
+> MOUNT_TEST_END
+> TESTS_END
+=====
+testing our test-inodes on disk aiw.uv6: done.
+diff from reference:
+36a37,72
+> TESTS_BEGINNING
+> isize: 64
+> fsize: 4096
+> fbmsize: 0
+> ibmsize: 0
+> inode_start: 2
+> block_start: 66
+> fbm_start: 0
+> ibm_start: 0
+> TEST_BEGIN
+> sector_read_null_file_ptr: PASS
+> sector_read_null_data_ptr: PASS
+> successful_read: PASS
+> overseek: PASS
+> fbm_null: PASS
+> ibm_null: PASS
+> non_null_file: PASS
+> TEST_END
+> MOUNT_TEST_BEGIN
+> **********FS SUPERBLOCK START**********
+> s_isize             : 64
+> s_fsize             : 4096
+> s_fbmsize           : 0
+> s_ibmsize           : 0
+> s_inode_start       : 2
+> s_block_start       : 66
+> s_fbm_start         : 0
+> s_ibm_start         : 0
+> s_flock             : 0
+> s_ilock             : 0
+> s_fmod              : 0
+> s_ronly             : 0
+> s_time              : [0] 0
+> **********FS SUPERBLOCK END**********
+> MOUNT_TEST_END
+> TESTS_END
+=====
+testing our test-file on disk simple.uv6: done.
+diff from reference:
+16,36c16,35
+< 
+< Printing inode #3:
+< **********FS INODE START**********
+< i_mode              : 32768
+< i_nlink             : 0
+< i_uid               : 0
+< i_gid               : 0
+< i_size0             : 0
+< i_size1             : 18
+< size                : 18
+< **********FS INODE END**********
+< the first sector of data of which contains:
+< Coucou le monde !
+< 
+< ----
+< filev6_open failed for inode #5.
+< 
+< Listing inodes SHA:
+< SHA inode 1 : no SHA for directories.
+< SHA inode 2 : no SHA for directories.
+< SHA inode 3 : 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c744c670cf95f715731d3
+---
+> TEST_BEGIN
+> inode_read_null_fs: PASS
+> inode_read_null_inode: PASS
+> inode_read_bad_inr: PASS
+> inode_read_too_high_inr: PASS
+> inode_fail_if_unallocated: FAIL
+> inode_findsector_null_fs: PASS
+> inode_findsector_null_inode: PASS
+> filev6_open_null_filesystem: PASS
+> filev6_open_null_file: PASS
+> filev6_matching_internal_inode_copy: PASS
+> filev6_matching_non_inode_fields: PASS
+> filev6_readblock_null_filev6: PASS
+> filev6_readblock_file_done: PASS
+> filev6_readblock_read_full_file: PASS
+> inode_findsector_unallocated_inode: PASS
+> inode_findsector_over_offset: FAIL
+> inode_findsector_small_over_offset: PASS
+> inode_findsector_large_over_offset: PASS
+> TEST_END
+=====
+testing our test-file on disk aiw.uv6: 
+---
+stderr: inode.c: In function ‘inode_scan_print’:
+inode.c:29:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (sectCount < nbrSect) {
+                      ^
+inode.c:31:56: warning: conversion to ‘size_t {aka long unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+         int readFeedback = sector_read(u->f, sectStart + sectCount, tempInodes);
+                                                        ^
+inode.c:31:46: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+         int readFeedback = sector_read(u->f, sectStart + sectCount, tempInodes);
+                                              ^
+inode.c:36:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for(int i = 0; i < INODES_PER_SECTOR; i++) {
+                          ^
+inode.c:39:81: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_DIR_NAME, inode_getsize(&tempInodes[i]));
+                                                                                 ^
+inode.c:39:61: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_DIR_NAME, inode_getsize(&tempInodes[i]));
+                                                             ^
+inode.c:41:81: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_FIL_NAME, inode_getsize(&tempInodes[i]));
+                                                                                 ^
+inode.c:41:61: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_FIL_NAME, inode_getsize(&tempInodes[i]));
+                                                             ^
+inode.c: In function ‘inode_read’:
+inode.c:97:42: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+     int readFeedback = sector_read(u->f, sector, tempInodes);
+                                          ^
+inode.c: In function ‘inode_findsector’:
+inode.c:133:38: warning: conversion to ‘size_t {aka long unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                 size_t offsetIAddr = file_sec_off / ADDRESSES_PER_SECTOR;
+                                      ^
+inode.c:134:41: warning: conversion to ‘size_t {aka long unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                 size_t indirectOffset = file_sec_off % ADDRESSES_PER_SECTOR;
+                                         ^
+inode.c:138:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+                 if(offsetIAddr >= 0 && offsetIAddr < ADDR_SMALL_LENGTH) {
+                                ^
+sector.c: In function ‘sector_read’:
+sector.c:26:13: warning: conversion to ‘int’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+         i = fread(data, SECTOR_SIZE , SECTORS_TO_READ, f);
+             ^
+sha.c: In function ‘print_sha_inode’:
+sha.c:113:43: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                 int j = sector_read(u->f, secteur, buffer);
+                                           ^
+filev6.c: In function ‘filev6_readblock’:
+filev6.c:62:47: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+             int read = sector_read(fv6->u->f, sect, buf);
+                                               ^
+direntv6.c: In function ‘direntv6_dirlookup’:
+direntv6.c:140:12: warning: implicit declaration of function ‘direntv6_dirlookup_core’ [-Wimplicit-function-declaration]
+     return direntv6_dirlookup_core(u, inr, entry, strlen(entry);
+            ^
+direntv6.c:140:64: error: expected ‘)’ before ‘;’ token
+     return direntv6_dirlookup_core(u, inr, entry, strlen(entry);
+                                                                ^
+direntv6.c:141:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+direntv6.c: At top level:
+direntv6.c:151:12: error: conflicting types for ‘direntv6_dirlookup_core’
+        int direntv6_dirlookup_core(const struct unix_filesystem *u, uint16_t inr, const char *entry)
+            ^
+direntv6.c:152:1: note: an argument type that has a default promotion can’t match an empty parameter name list declaration
+ {
+ ^
+direntv6.c:140:12: note: previous implicit declaration of ‘direntv6_dirlookup_core’ was here
+     return direntv6_dirlookup_core(u, inr, entry, strlen(entry);
+            ^
+direntv6.c: In function ‘direntv6_dirlookup_core’:
+direntv6.c:151:66: warning: unused parameter ‘u’ [-Wunused-parameter]
+        int direntv6_dirlookup_core(const struct unix_filesystem *u, uint16_t inr, const char *entry)
+                                                                  ^
+direntv6.c:151:78: warning: unused parameter ‘inr’ [-Wunused-parameter]
+        int direntv6_dirlookup_core(const struct unix_filesystem *u, uint16_t inr, const char *entry)
+                                                                              ^
+direntv6.c:151:95: warning: unused parameter ‘entry’ [-Wunused-parameter]
+        int direntv6_dirlookup_core(const struct unix_filesystem *u, uint16_t inr, const char *entry)
+                                                                                               ^
+make: *** [direntv6.o] Error 1
+/home/whitlock/pps/Dev2017/grading/students_feedback/week07/submit.sh: line 64: 214331 Segmentation fault      "$exec" "${disks_dir}/$disk" > /dev/null 2>&1

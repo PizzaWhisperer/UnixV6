@@ -1,0 +1,1940 @@
+Submission Failed
+
+preflight check script submit.sh returned error code 139
+stdout: making (our) test-inodes: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o error.o error.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-core.o test-core.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o inode.o inode.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o mount.o mount.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o sector.o sector.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-inodes test-inodes.o error.o test-core.o inode.o mount.o sector.o -ggdb
+test-inodes done.
+making (our) test-file: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-file.o test-file.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o sha.o sha.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o filev6.o filev6.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-file test-file.o error.o test-core.o inode.o mount.o sector.o sha.o filev6.o -lcrypto -ggdb
+test-file done.
+making (our) test-dirent: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o direntv6.o direntv6.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-dirent test-dirent.o direntv6.o error.o test-core.o mount.o filev6.o sector.o inode.o -ggdb
+test-dirent done.
+=====
+testing our test-inodes on disk simple.uv6: done.
+diff from reference:
+=====
+testing our test-inodes on disk aiw.uv6: done.
+diff from reference:
+=====
+testing our test-file on disk simple.uv6: done.
+diff from reference:
+27,34d26
+< BUFFER37--0==========================================
+< 
+< 
+< Coucou le monde !
+< CONTENT==========================================
+< 
+< 
+< Coucou le monde !
+=====
+testing our test-file on disk aiw.uv6: done.
+diff from reference:
+39,1813c39
+< BUFFER71--0==========================================
+< 
+< 
+< *** START: FULL LICENSE ***
+< 
+< THE FULL PROJECT GUTENBERG LICENSE
+< PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+< 
+< To protect the Project Gutenberg-tm mission of promoting the free
+< distribution of electronic works, by using or distributing this work
+< (or any other work associated in any way with the phrase “Project
+< Gutenberg”), you agree to comply with all the terms of the Full Project
+< Gutenberg-tm License (available with this file or online at
+< http://gutenberg.org/license).
+< 
+< 
+< Section 1.  General T@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< *** START: FULL LICENSE ***
+< 
+< THE FULL PROJECT GUTENBERG LICENSE
+< PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+< 
+< To protect the Project Gutenberg-tm mission of promoting the free
+< distribution of electronic works, by using or distributing this work
+< (or any other work associated in any way with the phrase “Project
+< Gutenberg”), you agree to comply with all the terms of the Full Project
+< Gutenberg-tm License (available with this file or online at
+< http://gutenberg.org/license).
+< 
+< 
+< Section 1.  General T@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER106--0==========================================
+< 
+< 
+< Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll
+< 
+< This eBook is for the use of anyone anywhere at no cost and with
+< almost no restrictions whatsoever.  You may copy it, give it away or
+< re-use it under the terms of the Project Gutenberg License included
+< with this eBook or online at www.gutenberg.org
+< 
+< 
+< Title: Alice’s Adventures in Wonderland
+< 
+< Author: Lewis Carroll
+< 
+< Posting Date: June 25, 2008 [EBook #11]
+< Release Date: March, 1994
+< Last Updated: October 6, 2016
+< 
+< Language: English
+< 
+< Cha@@CONTENT==========================================
+< 
+< 
+< Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll
+< 
+< This eBook is for the use of anyone anywhere at no cost and with
+< almost no restrictions whatsoever.  You may copy it, give it away or
+< re-use it under the terms of the Project Gutenberg License included
+< with this eBook or online at www.gutenberg.org
+< 
+< 
+< Title: Alice’s Adventures in Wonderland
+< 
+< Author: Lewis Carroll
+< 
+< Posting Date: June 25, 2008 [EBook #11]
+< Release Date: March, 1994
+< Last Updated: October 6, 2016
+< 
+< Language: English
+< 
+< Cha@@BUFFER108--0==========================================
+< 
+< 
+< ALICE’S ADVENTURES IN WONDERLAND
+< 
+< Lewis Carroll
+< 
+< THE MILLENNIUM FULCRUM EDITION 3.0
+< 
+< 
+< 
+< 
+< CHAPTER I. Down the Rabbit-Hole
+< 
+< Alice was beginning to get very tired of sitting by her sister on the
+< bank, and of having nothing to do: once or twice she had peeped into the
+< book her sister was reading, but it had no pictures or conversations in
+< it, ‘and what is the use of a book,’ thought Alice ‘without pictures or
+< conversations?’
+< 
+< So she was considering in her own mind (as well as she could, for the
+< hot day@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< ALICE’S ADVENTURES IN WONDERLAND
+< 
+< Lewis Carroll
+< 
+< THE MILLENNIUM FULCRUM EDITION 3.0
+< 
+< 
+< 
+< 
+< CHAPTER I. Down the Rabbit-Hole
+< 
+< Alice was beginning to get very tired of sitting by her sister on the
+< bank, and of having nothing to do: once or twice she had peeped into the
+< book her sister was reading, but it had no pictures or conversations in
+< it, ‘and what is the use of a book,’ thought Alice ‘without pictures or
+< conversations?’
+< 
+< So she was considering in her own mind (as well as she could, for the
+< hot day@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER132--0==========================================
+< 
+< 
+< CHAPTER II. The Pool of Tears
+< 
+< ‘Curiouser and curiouser!’ cried Alice (she was so much surprised, that
+< for the moment she quite forgot how to speak good English); ‘now I’m
+< opening out like the largest telescope that ever was! Good-bye, feet!’
+< (for when she looked down at her feet, they seemed to be almost out of
+< sight, they were getting so far off). ‘Oh, my poor little feet, I wonder
+< who will put on your shoes and stockings for you now, dears? I’m sure
+< _I_ shan’t be able! I shall be a great @@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER II. The Pool of Tears
+< 
+< ‘Curiouser and curiouser!’ cried Alice (she was so much surprised, that
+< for the moment she quite forgot how to speak good English); ‘now I’m
+< opening out like the largest telescope that ever was! Good-bye, feet!’
+< (for when she looked down at her feet, they seemed to be almost out of
+< sight, they were getting so far off). ‘Oh, my poor little feet, I wonder
+< who will put on your shoes and stockings for you now, dears? I’m sure
+< _I_ shan’t be able! I shall be a great @@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER156--0==========================================
+< 
+< 
+< CHAPTER III. A Caucus-Race and a Long Tale
+< 
+< They were indeed a queer-looking party that assembled on the bank--the
+< birds with draggled feathers, the animals with their fur clinging close
+< to them, and all dripping wet, cross, and uncomfortable.
+< 
+< The first question of course was, how to get dry again: they had a
+< consultation about this, and after a few minutes it seemed quite natural
+< to Alice to find herself talking familiarly with them, as if she had
+< known them all her life. Indeed, she had quite a long argu@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER III. A Caucus-Race and a Long Tale
+< 
+< They were indeed a queer-looking party that assembled on the bank--the
+< birds with draggled feathers, the animals with their fur clinging close
+< to them, and all dripping wet, cross, and uncomfortable.
+< 
+< The first question of course was, how to get dry again: they had a
+< consultation about this, and after a few minutes it seemed quite natural
+< to Alice to find herself talking familiarly with them, as if she had
+< known them all her life. Indeed, she had quite a long argu@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER177--0==========================================
+< 
+< 
+< CHAPTER IV. The Rabbit Sends in a Little Bill
+< 
+< It was the White Rabbit, trotting slowly back again, and looking
+< anxiously about as it went, as if it had lost something; and she heard
+< it muttering to itself ‘The Duchess! The Duchess! Oh my dear paws! Oh
+< my fur and whiskers! She’ll get me executed, as sure as ferrets are
+< ferrets! Where CAN I have dropped them, I wonder?’ Alice guessed in a
+< moment that it was looking for the fan and the pair of white kid gloves,
+< and she very good-naturedly began hunting @@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER IV. The Rabbit Sends in a Little Bill
+< 
+< It was the White Rabbit, trotting slowly back again, and looking
+< anxiously about as it went, as if it had lost something; and she heard
+< it muttering to itself ‘The Duchess! The Duchess! Oh my dear paws! Oh
+< my fur and whiskers! She’ll get me executed, as sure as ferrets are
+< ferrets! Where CAN I have dropped them, I wonder?’ Alice guessed in a
+< moment that it was looking for the fan and the pair of white kid gloves,
+< and she very good-naturedly began hunting @@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER206--0==========================================
+< 
+< 
+< CHAPTER V. Advice from a Caterpillar
+< 
+< The Caterpillar and Alice looked at each other for some time in silence:
+< at last the Caterpillar took the hookah out of its mouth, and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘Wh@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER V. Advice from a Caterpillar
+< 
+< The Caterpillar and Alice looked at each other for some time in silence:
+< at last the Caterpillar took the hookah out of its mouth, and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘Wh@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER232--0==========================================
+< 
+< 
+< CHAPTER VI. Pig and Pepper
+< 
+< For a minute or two she stood looking at the house, and wondering what
+< to do next, when suddenly a footman in livery came running out of the
+< wood--(she considered him to be a footman because he was in livery:
+< otherwise, judging by his face only, she would have called him a
+< fish)--and rapped loudly at the door with his knuckles. It was opened
+< by another footman in livery, with a round face, and large eyes like a
+< frog; and both footmen, Alice noticed, had powdered hair that curled @@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER VI. Pig and Pepper
+< 
+< For a minute or two she stood looking at the house, and wondering what
+< to do next, when suddenly a footman in livery came running out of the
+< wood--(she considered him to be a footman because he was in livery:
+< otherwise, judging by his face only, she would have called him a
+< fish)--and rapped loudly at the door with his knuckles. It was opened
+< by another footman in livery, with a round face, and large eyes like a
+< frog; and both footmen, Alice noticed, had powdered hair that curled @@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER262--0==========================================
+< 
+< 
+< CHAPTER VII. A Mad Tea-Party
+< 
+< There was a table set out under a tree in front of the house, and the
+< March Hare and the Hatter were having tea at it: a Dormouse was sitting
+< between them, fast asleep, and the other two were using it as a
+< cushion, resting their elbows on it, and talking over its head. ‘Very
+< uncomfortable for the Dormouse,’ thought Alice; ‘only, as it’s asleep, I
+< suppose it doesn’t mind.’
+< 
+< The table was a large one, but the three were all crowded together at
+< one corner of it: ‘No @@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER VII. A Mad Tea-Party
+< 
+< There was a table set out under a tree in front of the house, and the
+< March Hare and the Hatter were having tea at it: a Dormouse was sitting
+< between them, fast asleep, and the other two were using it as a
+< cushion, resting their elbows on it, and talking over its head. ‘Very
+< uncomfortable for the Dormouse,’ thought Alice; ‘only, as it’s asleep, I
+< suppose it doesn’t mind.’
+< 
+< The table was a large one, but the three were all crowded together at
+< one corner of it: ‘No @@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER290--0==========================================
+< 
+< 
+< CHAPTER VIII. The Queen’s Croquet-Ground
+< 
+< A large rose-tree stood near the entrance of the garden: the roses
+< growing on it were white, but there were three gardeners at it, busily
+< painting them red. Alice thought this a very curious thing, and she went
+< nearer to watch them, and just as she came up to them she heard one of
+< them say, ‘Look out now, Five! Don’t go splashing paint over me like
+< that!’
+< 
+< ‘I couldn’t help it,’ said Five, in a sulky tone; ‘Seven jogged my
+< elbow.’
+< 
+< On which Seven lo@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER VIII. The Queen’s Croquet-Ground
+< 
+< A large rose-tree stood near the entrance of the garden: the roses
+< growing on it were white, but there were three gardeners at it, busily
+< painting them red. Alice thought this a very curious thing, and she went
+< nearer to watch them, and just as she came up to them she heard one of
+< them say, ‘Look out now, Five! Don’t go splashing paint over me like
+< that!’
+< 
+< ‘I couldn’t help it,’ said Five, in a sulky tone; ‘Seven jogged my
+< elbow.’
+< 
+< On which Seven lo@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER319--0==========================================
+< 
+< 
+< CHAPTER IX. The Mock Turtle’s Story
+< 
+< ‘You can’t think how glad I am to see you again, you dear old thing!’
+< said the Duchess, as she tucked her arm affectionately into Alice’s, and
+< they walked off together.
+< 
+< Alice was very glad to find her in such a pleasant temper, and thought
+< to herself that perhaps it was only the pepper that had made her so
+< savage when they met in the kitchen.
+< 
+< ‘When I’M a Duchess,’ she said to herself, (not in a very hopeful tone
+< though), ‘I won’t have any pepper in @@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER IX. The Mock Turtle’s Story
+< 
+< ‘You can’t think how glad I am to see you again, you dear old thing!’
+< said the Duchess, as she tucked her arm affectionately into Alice’s, and
+< they walked off together.
+< 
+< Alice was very glad to find her in such a pleasant temper, and thought
+< to herself that perhaps it was only the pepper that had made her so
+< savage when they met in the kitchen.
+< 
+< ‘When I’M a Duchess,’ she said to herself, (not in a very hopeful tone
+< though), ‘I won’t have any pepper in @@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER347--0==========================================
+< 
+< 
+< CHAPTER X. The Lobster Quadrille
+< 
+< The Mock Turtle sighed deeply, and drew the back of one flapper across
+< his eyes. He looked at Alice, and tried to speak, but for a minute or
+< two sobs choked his voice. ‘Same as if he had a bone in his throat,’
+< said the Gryphon: and it set to work shaking him and punching him in
+< the back. At last the Mock Turtle recovered his voice, and, with tears
+< running down his cheeks, he went on again:--
+< 
+< ‘You may not have lived much under the sea--’ [‘I haven’t,’ said
+< Ali@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER X. The Lobster Quadrille
+< 
+< The Mock Turtle sighed deeply, and drew the back of one flapper across
+< his eyes. He looked at Alice, and tried to speak, but for a minute or
+< two sobs choked his voice. ‘Same as if he had a bone in his throat,’
+< said the Gryphon: and it set to work shaking him and punching him in
+< the back. At last the Mock Turtle recovered his voice, and, with tears
+< running down his cheeks, he went on again:--
+< 
+< ‘You may not have lived much under the sea--’ [‘I haven’t,’ said
+< Ali@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER372--0==========================================
+< 
+< 
+< CHAPTER XI. Who Stole the Tarts?
+< 
+< The King and Queen of Hearts were seated on their throne when they
+< arrived, with a great crowd assembled about them--all sorts of little
+< birds and beasts, as well as the whole pack of cards: the Knave was
+< standing before them, in chains, with a soldier on each side to guard
+< him; and near the King was the White Rabbit, with a trumpet in one hand,
+< and a scroll of parchment in the other. In the very middle of the court
+< was a table, with a large dish of tarts upon it: they look@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER XI. Who Stole the Tarts?
+< 
+< The King and Queen of Hearts were seated on their throne when they
+< arrived, with a great crowd assembled about them--all sorts of little
+< birds and beasts, as well as the whole pack of cards: the Knave was
+< standing before them, in chains, with a soldier on each side to guard
+< him; and near the King was the White Rabbit, with a trumpet in one hand,
+< and a scroll of parchment in the other. In the very middle of the court
+< was a table, with a large dish of tarts upon it: they look@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER395--0==========================================
+< 
+< 
+< CHAPTER XII. Alice’s Evidence
+< 
+< 
+< ‘Here!’ cried Alice, quite forgetting in the flurry of the moment how
+< large she had grown in the last few minutes, and she jumped up in such
+< a hurry that she tipped over the jury-box with the edge of her skirt,
+< upsetting all the jurymen on to the heads of the crowd below, and there
+< they lay sprawling about, reminding her very much of a globe of goldfish
+< she had accidentally upset the week before.
+< 
+< ‘Oh, I BEG your pardon!’ she exclaimed in a tone of great dismay, and@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< CHAPTER XII. Alice’s Evidence
+< 
+< 
+< ‘Here!’ cried Alice, quite forgetting in the flurry of the moment how
+< large she had grown in the last few minutes, and she jumped up in such
+< a hurry that she tipped over the jury-box with the edge of her skirt,
+< upsetting all the jurymen on to the heads of the crowd below, and there
+< they lay sprawling about, reminding her very much of a globe of goldfish
+< she had accidentally upset the week before.
+< 
+< ‘Oh, I BEG your pardon!’ she exclaimed in a tone of great dismay, and@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER420--0==========================================
+< 
+< 
+< End of Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll
+< 
+< *** END OF THIS PROJECT GUTENBERG EBOOK ALICE’S ADVENTURES IN WONDERLAND ***
+< 
+< ***** This file should be named 11-0.txt or 11-0.zip *****
+< This and all associated files of various formats will be found in:
+<         http://www.gutenberg.org/1/11/
+< 
+< 
+< 
+< Updated editions will replace the previous one--the old editions
+< will be renamed.
+< 
+< Creating the works from public domain print editions means that no
+< one owns a United States copyri@@CONTENT==========================================
+< 
+< 
+< End of Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll
+< 
+< *** END OF THIS PROJECT GUTENBERG EBOOK ALICE’S ADVENTURES IN WONDERLAND ***
+< 
+< ***** This file should be named 11-0.txt or 11-0.zip *****
+< This and all associated files of various formats will be found in:
+<         http://www.gutenberg.org/1/11/
+< 
+< 
+< 
+< Updated editions will replace the previous one--the old editions
+< will be renamed.
+< 
+< Creating the works from public domain print editions means that no
+< one owns a United States copyri@@BUFFER424--0==========================================
+< 
+< 
+< Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll
+< 
+< This eBook is for the use of anyone anywhere at no cost and with
+< almost no restrictions whatsoever.  You may copy it, give it away or
+< re-use it under the terms of the Project Gutenberg License included
+< with this eBook or online at www.gutenberg.org
+< 
+< 
+< Title: Alice’s Adventures in Wonderland
+< 
+< Author: Lewis Carroll
+< 
+< Posting Date: June 25, 2008 [EBook #11]
+< Release Date: March, 1994
+< Last Updated: October 6, 2016
+< 
+< Language: English
+< 
+< Cha@@BUFFER519--512==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1024==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@BUFFER519--1536==========================================
+< 
+< 
+< and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@CONTENT==========================================
+< 
+< 
+< Project Gutenberg’s Alice’s Adventures in Wonderland, by Lewis Carroll
+< 
+< This eBook is for the use of anyone anywhere at no cost and with
+< almost no restrictions whatsoever.  You may copy it, give it away or
+< re-use it under the terms of the Project Gutenberg License included
+< with this eBook or online at www.gutenberg.org
+< 
+< 
+< Title: Alice’s Adventures in Wonderland
+< 
+< Author: Lewis Carroll
+< 
+< Posting Date: June 25, 2008 [EBook #11]
+< Release Date: March, 1994
+< Last Updated: October 6, 2016
+< 
+< Language: English
+< 
+< Cha@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@and addressed
+< her in a languid, sleepy voice.
+< 
+< ‘Who are YOU?’ said the Caterpillar.
+< 
+< This was not an encouraging opening for a conversation. Alice replied,
+< rather shyly, ‘I--I hardly know, sir, just at present--at least I know
+< who I WAS when I got up this morning, but I think I must have been
+< changed several times since then.’
+< 
+< ‘What do you mean by that?’ said the Caterpillar sternly. ‘Explain
+< yourself!’
+< 
+< ‘I can’t explain MYSELF, I’m afraid, sir’ said Alice, ‘because I’m not
+< myse@@the first sector of data of which contains:
+---
+> the first sector of data of which contains:
+1835,1849c61,75
+< SHA inode 5 : b55ece6d7036b890b251dadca719576d6cc4a691ff9e162fb74dc51503c2b54b
+< SHA inode 6 : ee548a02151eb0fe247edefc598931037f71a9094a4f0a8cce1113fe99dc8dae
+< SHA inode 7 : 6b96d83a0fea76af0b458fee13409d8b6a15ae5e024460ff72fb7a7174d72d61
+< SHA inode 8 : 6212ae9e6c7c74673079cf2b64a28d11e9fe38e95adc13765ddf6b6bc701f3db
+< SHA inode 9 : e948760df49872c2ed095d21f3c90e0a6496f10197008dc4695237f38be002c2
+< SHA inode 10 : 43b477df1609b64093e466105a80a5cef71fdcc0d67130e20c1aa2144fc4274f
+< SHA inode 11 : c9cc1ca4c8f6d7619d8fd211b5abaebb6774b6b3ddb27d29a2af1e8f141fd88a
+< SHA inode 12 : a5509c21c07e6d40c0747e71daa7d229206c7564ca222eb9d5b5f74bc716e1ac
+< SHA inode 13 : 25da299a64e811ed96a983a8585767244a227328c3af15a7046fb3ce979ba454
+< SHA inode 14 : 3c41abcf60212150332bf30eb4e9fecf3e74a24f7da3276cdb72a98525945056
+< SHA inode 15 : c03d83abcb771ff43c61a8a202ff95f20bda87e69dcf2619147a6fbae4142fde
+< SHA inode 16 : 7a8533fbb0b19c73718b58fdd23041614f1f0400bef565ad38c91533a1702839
+< SHA inode 17 : 965961daf862a58da38fc0f2006685cce74805aa8c9df0e162ad427830c60a55
+< SHA inode 18 : 487a8eb9baacdbded420ca988bc1ef81dff53467a1b397f85b8e0ff7b9ba049d
+< SHA inode 19 : c19e9b2e11d6b83533047932d2fa883283e8eed03ff89ea46829fc38cd9f41a9
+---
+> SHA inode 5: 819b3529b07803dcb47741634ae1b40e497ec95a446ab1e1b1487bb222179dd5
+> SHA inode 6: 076b4252236b5c65a22770eb8c3316e2ac0629805a5e2d72c34484dd51fb5a6f
+> SHA inode 7: c2971e205022f72b0caa0aa10daca11be0212d943013272c60c96baf576cb7f6
+> SHA inode 8: 48cd4b1136fa0838f3bf8ce223e797f38706181ca12e9e6b00efc0690d6a2fcf
+> SHA inode 9: 41f2dc3958e33e459e0c6cd220815f50a3979cc1e5aa4bb8cfade0e39ef1aea6
+> SHA inode 10: cdea875906eee21f90f754383002eaa759e8d7cca8a1f02c79be100d6e47c710
+> SHA inode 11: 0a0741431cbb375690b4caff30179e3c69f877d099ba0f9be3ad84e59a5efb54
+> SHA inode 12: f55cfe8b940af2afa0ce0fe4f3a3b3a2985ad729cf5ba81b627c8ae547f1dc09
+> SHA inode 13: 2230f84ec20cd05e47ae9472cb9c72e465a793284b721961f38f78e529c05ea8
+> SHA inode 14: 5daf44c4d13d3dce6fae82048229b01d9f1ae9571bebb4c1e34366f8965c008f
+> SHA inode 15: 096013d6aab6164cdbf871ecdf44620a3efbdc0721a7be8b778e97630d0bf79c
+> SHA inode 16: 8c8ebdfc9a861c47bd6b76bfea88496cdab3a6732a6c6c0fafd7abbb59d6f848
+> SHA inode 17: 8a5b56ab6fe0d5dd7c54f0301fd36eff6fc79812c55874c37c9186b67e9b2539
+> SHA inode 18: 5a68e7881617e00238c6b05d4bcf7ccd96fdbfa764d4d2da19b8222199f84339
+> SHA inode 19: 37302d665c56d16309f795f023ffb46d5b457a2aa906a4ecea5a94a7dc7eea85
+1851c77
+< SHA inode 21 : 0420656bb77cd84efb61bc26e14f37ede0706a819782813e15ec49703fbb1281
+---
+> SHA inode 21: 7ee39739006a4a5f1b2a082d1f825837ee4403c85acc8a6257cd0e797bef9d77
+=====
+testing our test-dirent on disk simple.uv6: 
+---
+stderr: inode.c: In function ‘inode_scan_print’:
+inode.c:29:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (sectCount < nbrSect) {
+                      ^
+inode.c:31:56: warning: conversion to ‘size_t {aka long unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+         int readFeedback = sector_read(u->f, sectStart + sectCount, tempInodes);
+                                                        ^
+inode.c:31:46: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+         int readFeedback = sector_read(u->f, sectStart + sectCount, tempInodes);
+                                              ^
+inode.c:36:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for(int i = 0; i < INODES_PER_SECTOR; i++) {
+                          ^
+inode.c:39:81: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_DIR_NAME, inode_getsize(&tempInodes[i]));
+                                                                                 ^
+inode.c:39:61: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_DIR_NAME, inode_getsize(&tempInodes[i]));
+                                                             ^
+inode.c:41:81: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_FIL_NAME, inode_getsize(&tempInodes[i]));
+                                                                                 ^
+inode.c:41:61: warning: conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                     printf("inode   %lu (%s) len   %d\n", i + INODES_PER_SECTOR * sectCount, SHORT_FIL_NAME, inode_getsize(&tempInodes[i]));
+                                                             ^
+inode.c: In function ‘inode_read’:
+inode.c:132:42: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+     int readFeedback = sector_read(u->f, goodSectNbr, tempInodes);
+                                          ^
+inode.c: In function ‘inode_findsector’:
+inode.c:208:38: warning: conversion to ‘size_t {aka long unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                 size_t offsetIAddr = file_sec_off / ADDRESSES_PER_SECTOR;
+                                      ^
+inode.c:209:41: warning: conversion to ‘size_t {aka long unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                 size_t indirectOffset = file_sec_off % ADDRESSES_PER_SECTOR;
+                                         ^
+inode.c:214:32: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+                 if(offsetIAddr >= 0 && offsetIAddr < ADDR_SMALL_LENGTH) {
+                                ^
+sector.c: In function ‘sector_read’:
+sector.c:26:13: warning: conversion to ‘int’ from ‘size_t {aka long unsigned int}’ may alter its value [-Wconversion]
+         i = fread(data, SECTOR_SIZE , SECTORS_TO_READ, f);
+             ^
+sha.c: In function ‘print_sha_inode’:
+sha.c:108:43: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+                 int j = sector_read(u->f, i, buffer);
+                                           ^
+sha.c:116:49: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+                 strncat(content, buffer, strlen(buffer) +1);
+                                                 ^
+In file included from sha.c:3:0:
+/usr/include/string.h:394:15: note: expected ‘const char *’ but argument is of type ‘unsigned char *’
+ extern size_t strlen (const char *__s)
+               ^
+sha.c:116:25: warning: pointer targets in passing argument 1 of ‘strncat’ differ in signedness [-Wpointer-sign]
+                 strncat(content, buffer, strlen(buffer) +1);
+                         ^
+In file included from sha.c:3:0:
+/usr/include/string.h:136:14: note: expected ‘char * restrict’ but argument is of type ‘unsigned char *’
+ extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+              ^
+sha.c:116:34: warning: pointer targets in passing argument 2 of ‘strncat’ differ in signedness [-Wpointer-sign]
+                 strncat(content, buffer, strlen(buffer) +1);
+                                  ^
+In file included from sha.c:3:0:
+/usr/include/string.h:136:14: note: expected ‘const char * restrict’ but argument is of type ‘unsigned char *’
+ extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+              ^
+sha.c:122:52: warning: pointer targets in passing argument 1 of ‘strlen’ differ in signedness [-Wpointer-sign]
+             print_sha_from_content(content, strlen(content));
+                                                    ^
+In file included from sha.c:3:0:
+/usr/include/string.h:394:15: note: expected ‘const char *’ but argument is of type ‘unsigned char *’
+ extern size_t strlen (const char *__s)
+               ^
+filev6.c: In function ‘filev6_readblock’:
+filev6.c:65:47: warning: conversion to ‘uint32_t {aka unsigned int}’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+             int read = sector_read(fv6->u->f, sect, buf);
+                                               ^

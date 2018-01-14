@@ -1,0 +1,126 @@
+Submission Failed
+
+preflight check script submit.sh returned error code 139
+stdout: making (our) test-inodes: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o error.o error.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-core.o test-core.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o inode.o inode.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o mount.o mount.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o sector.o sector.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-inodes test-inodes.o error.o test-core.o inode.o mount.o sector.o -ggdb
+test-inodes done.
+making (our) test-file: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-file.o test-file.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o sha.o sha.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o filev6.o filev6.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-file test-file.o error.o test-core.o inode.o mount.o sector.o sha.o filev6.o -lcrypto -ggdb
+test-file done.
+making (our) test-dirent: 
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code   -c -o direntv6.o direntv6.c
+gcc -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -o test-dirent test-dirent.o direntv6.o error.o test-core.o mount.o filev6.o sector.o inode.o -ggdb
+test-dirent done.
+=====
+testing our test-inodes on disk simple.uv6: done.
+diff from reference:
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 32					s_isize             : 32
+s_fsize             : 1024					s_fsize             : 1024
+s_fbmsize           : 0						s_fbmsize           : 0
+s_ibmsize           : 0						s_ibmsize           : 0
+s_inode_start       : 2						s_inode_start       : 2
+s_block_start       : 34					s_block_start       : 34
+s_fbm_start         : 0						s_fbm_start         : 0
+s_ibm_start         : 0						s_ibm_start         : 0
+s_flock             : 0						s_flock             : 0
+s_ilock             : 0						s_ilock             : 0
+s_fmod              : 0						s_fmod              : 0
+s_ronly             : 0						s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+inode   1 (DIR) len   16					inode   1 (DIR) len   16
+inode   2 (DIR) len   16					inode   2 (DIR) len   16
+inode   3 (FIL) len   18					inode   3 (FIL) len   18
+=====
+testing our test-inodes on disk aiw.uv6: done.
+diff from reference:
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 64					s_isize             : 64
+s_fsize             : 4096					s_fsize             : 4096
+s_fbmsize           : 0						s_fbmsize           : 0
+s_ibmsize           : 0						s_ibmsize           : 0
+s_inode_start       : 2						s_inode_start       : 2
+s_block_start       : 66					s_block_start       : 66
+s_fbm_start         : 0						s_fbm_start         : 0
+s_ibm_start         : 0						s_ibm_start         : 0
+s_flock             : 0						s_flock             : 0
+s_ilock             : 0						s_ilock             : 0
+s_fmod              : 0						s_fmod              : 0
+s_ronly             : 0						s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+inode   1 (DIR) len   16					inode   1 (DIR) len   16
+inode   2 (DIR) len   16					inode   2 (DIR) len   16
+inode   3 (DIR) len   32					inode   3 (DIR) len   32
+inode   4 (DIR) len   240					inode   4 (DIR) len  240
+inode   5 (FIL) len   17385					inode   5 (FIL) len 17385
+inode   6 (FIL) len   631					inode   6 (FIL) len  631
+inode   7 (FIL) len   11761					inode   7 (FIL) len 11761
+inode   8 (FIL) len   11332					inode   8 (FIL) len 11332
+inode   9 (FIL) len   9938					inode   9 (FIL) len 9938
+inode   10 (FIL) len   14282					inode  10 (FIL) len 14282
+inode   11 (FIL) len   12527					inode  11 (FIL) len 12527
+inode   12 (FIL) len   14411					inode  12 (FIL) len 14411
+inode   13 (FIL) len   13459					inode  13 (FIL) len 13459
+inode   14 (FIL) len   14145					inode  14 (FIL) len 14145
+inode   15 (FIL) len   13339					inode  15 (FIL) len 13339
+inode   16 (FIL) len   12147					inode  16 (FIL) len 12147
+inode   17 (FIL) len   10871					inode  17 (FIL) len 10871
+inode   18 (FIL) len   12149					inode  18 (FIL) len 12149
+inode   19 (FIL) len   1428					inode  19 (FIL) len 1428
+inode   20 (DIR) len   16					inode  20 (DIR) len   16
+inode   21 (FIL) len   169856					inode  21 (FIL) len 169856
+=====
+testing our test-file on disk simple.uv6: done.
+diff from reference:
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 32					s_isize             : 32
+s_fsize             : 1024					s_fsize             : 1024
+s_fbmsize           : 0						s_fbmsize           : 0
+s_ibmsize           : 0						s_ibmsize           : 0
+s_inode_start       : 2						s_inode_start       : 2
+s_block_start       : 34					s_block_start       : 34
+s_fbm_start         : 0						s_fbm_start         : 0
+s_ibm_start         : 0						s_ibm_start         : 0
+s_flock             : 0						s_flock             : 0
+s_ilock             : 0						s_ilock             : 0
+s_fmod              : 0						s_fmod              : 0
+s_ronly             : 0						s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+
+Printing inode #3:						Printing inode #3:
+**********FS INODE START**********				**********FS INODE START**********
+i_mode              : 32768					i_mode: 32768
+i_nlink             : 0						i_nlink: 0
+i_uid               : 0						i_uid: 0
+i_gid               : 0						i_gid: 0
+i_size0             : 0						i_size0: 0
+i_size1             : 18					i_size1: 18
+size                : 18					size: 18 
+**********FS INODE END**********				**********FS INODE END**********
+the first sector of data of which contains:			the first sector of data of which contains:
+Coucou le monde !						Coucou le monde !
+
+----								----
+filev6_open failed for inode #5.				filev6_open failed for inode #5.
+
+Listing inodes SHA:						Listing inodes SHA:
+SHA inode 1 : no SHA for directories.				SHA inode 1: no SHA for directories.
+SHA inode 2 : no SHA for directories.				SHA inode 2: no SHA for directories.
+SHA inode 3 : 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c744	SHA inode 3: 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c744c
+=====
+testing our test-file on disk aiw.uv6: 
+---
+stderr: /home/whitlock/pps/Dev2017/grading/students_feedback/week08/submit.sh: line 101: 94317 Segmentation fault      "$exec" "${disks_dir}/$disk" > /dev/null 2>&1

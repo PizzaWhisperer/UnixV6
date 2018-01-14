@@ -1,0 +1,42 @@
+Submission accepted
+
+stdout: cc -std=c99   -c -o test-inodes.o test-inodes.c
+cc -std=c99   -c -o error.o error.c
+cc -std=c99   -c -o test-core.o test-core.c
+cc -std=c99   -c -o inode.o inode.c
+cc -std=c99   -c -o mount.o mount.c
+cc -std=c99   -c -o sector.o sector.c
+gcc -std=c99 -o test-inodes test-inodes.o error.o test-core.o inode.o mount.o sector.o
+simple test
+**********FS SUPERBLOCK START**********
+s_isize             : 32
+s_fsize             : 1024
+s_fbmsize           : 0
+s_ibmsize           : 0
+s_inode_start       : 2
+s_block_start       : 34
+s_fbm_start         : 0
+s_ibm_start         : 0
+s_flock             : 0
+s_ilock             : 0
+s_fmod              : 0
+s_ronly             : 0
+s_time              : [0] 0
+**********FS SUPERBLOCK END**********
+inode   1 (DIR) len   16
+inode   1 (DIR) len   16
+inode   1 (FIL) len   18
+TESTS_BEGINNING
+TESTS_END
+-----
+diff from master
+17,20c17,18
+< inode   1 (DIR) len   16
+< inode   1 (FIL) len   18
+< TESTS_BEGINNING
+< TESTS_END
+---
+> inode   2 (DIR) len   16
+> inode   3 (FIL) len   18
+
+stderr: 
